@@ -1,0 +1,42 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+body {
+    background-color: #f6f6f6;
+    font-family: "Century Gothic";
+}
+/*头部导航*/
+.menu {
+    padding: 1em;
+    text-align: center;
+}
+.menu ul {
+    padding-top: 0.5em;
+    padding-right: 3em;
+}
+.menu li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0.7em 0.2em;
+    margin-right: 2em;
+    height: 2em;
+    line-height: 2em;
+}
+.menu li:hover {
+    background-color: #ffea00;
+}
+
+/*首页轮播图*/
+.home-pic-roll {
+    background: url("../img/slider_bg.png");
+    background-size: cover;
+}

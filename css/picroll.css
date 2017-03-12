@@ -1,0 +1,45 @@
+.picroll_window {
+    position: relative;
+    left: 0;
+}
+.picroll_window:after {
+    content: "";
+    height: 0;
+    clear: both;
+}
+.picroll_box {
+    float: left;
+}
+.picroll_box img {
+    width: 100%;
+    height: auto;
+}
+.picroll_nav {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -50px;
+}
+.picroll_nav li {
+    float: left;
+    width: 15px;
+    height: 15px;
+    list-style: none;
+    color: #ffea00;
+    font-size: large;
+    line-height: 20px;
+    margin-right: 2px;
+    background-color: #444444;
+    border: solid #444 2px;
+}
+.picroll_nav_hover {
+    background-color: #ffea00 !important;
+}
+.picroll_nav li:hover {
+    background-color: #ffea00;
+}
+.picroll_nav ul {
+    margin: 0;
+    padding: 0;
+    height: 20px;
+}
