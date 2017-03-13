@@ -3,22 +3,24 @@
     left: 0;
 }
 .picroll_window:after {
-    content: "";
+    content: ".";
+    display: block;
     height: 0;
     clear: both;
+    visibility: hidden;
 }
 .picroll_box {
     float: left;
 }
-.picroll_box img {
-    width: 100%;
-    height: auto;
-}
+/*.picroll_box > img {*/
+    /*width: 100%;*/
+    /*height: auto;*/
+/*}*/
 .picroll_nav {
     position: absolute;
     bottom: 0;
     left: 50%;
-    margin-left: -50px;
+    /*margin-left: -50px;*/
 }
 .picroll_nav li {
     float: left;

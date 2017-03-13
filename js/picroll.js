@@ -32,7 +32,8 @@ define(['jquery','widget'],function ($, widget) {
             this.on("picroll",function (data) {
                 var index = $(data).index();
                 var window = that.boundingBox.find(".picroll_window");
-                xpos = -index * that.cfg.width;
+                var moveLength = that.boundingBox.width();
+                xpos = -index * moveLength;
                 window.stop(true, false).animate({left: xpos + "px"}, that.cfg.speed, "swing");
             });
             this.boundingBox.find(".picroll_nav ul").delegate("li","mouseenter",function () {
@@ -59,25 +60,35 @@ define(['jquery','widget'],function ($, widget) {
                 clearInterval(that.rollTrigger);
             }).mouseleave(function () {
                 if (that.cfg.repeat){
-                    that.rollTrigger = setTimeout(autoTrigger,that.cfg.interval+that.cfg.speed);
+                    that.rollTrigger = setTimeout(autoTrigger,that.cfg.interval);
                 }
             });
+            var container = this.boundingBox;
+            $(window).resize(function () {
+                clearInterval(that.rollTrigger);
+                var nowWid = container.width();
+                container.find(".picroll_window").stop(true,true).css({
+                    "width" : nowWid * that.cfg.boxNumber
+                });
+                container.find(".picroll_box").css({
+                    "width" : nowWid
+                });
+                that.rollTrigger = setTimeout(autoTrigger,500);
+            })
         },
         syncUI : function () {
             var container = this.boundingBox;
             container.css({
-                "width" : this.cfg.width + "px",
-                "height" : this.cfg.height + "px",
                 "overflow" : "hidden",
                 "position" : "relative"
             });
             container.find(".picroll_window").css({
-                "width" : this.cfg.boxNumber*this.cfg.width + "px",
-                "height" : this.cfg.height + "px"
+                "width" : container.width() * this.cfg.boxNumber,
+                "height" : container.height()
             });
             container.find(".picroll_box").css({
-                "width" : this.cfg.width + "px",
-                "height" : this.cfg.height + "px"
+                "width" : container.width(),
+                "height" : "100%"
             });
             container.find(".picroll_nav").css("margin-left",(-this.cfg.boxNumber*10)+"px");
             if (this.cfg.skinClassName){

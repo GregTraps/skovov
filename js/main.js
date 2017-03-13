@@ -12,9 +12,13 @@ require.config({
 require(["jquery","picroll"],function ($,picroll) {
     var homePicRoll =  $(".home-pic-roll");
     var createRoll = new picroll.Picroll().createRoll(homePicRoll,{
-        width : $(document.body).width() - 18,
-        height : $(document.body).width() / 2.4 ,
+        // width : $(document.body).width() - 18,
+        // height : $(document.body).width() / 2.4 ,
         interval : 2000,
-        speed : 1000
+        speed : 1500
     });
+    // $(".home-works-gallery > div").each(function () {
+    //     var height = $(this).find("img").height();
+    //     $(this).css("height",height);
+    // })
 });
