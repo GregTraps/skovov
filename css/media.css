@@ -6,8 +6,27 @@
         float: left;
         margin-left: 5em;
     }
+    .home-works {
+        padding-bottom: 130px;
+    }
+    .home-works-gallery {
+        height: 650px;
+    }
+}
+@media (min-width: 64em) {
+    .menu li {
+        margin-right: 3em;
+    }
+}
+
+@media (max-width: 1240px) {
+    .home-works-gallery {
+        height: 511px;
+    }
 }
 
 @media (max-width: 48em) {
-
+    .home-works-gallery {
+        height: 400px;
+    }
 }
